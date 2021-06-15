@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="563.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="monopoly.client.MainController">
+   <children>
+      <Button fx:id="startBtn" layoutX="246.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#start" prefHeight="54.0" prefWidth="101.0" text="START" />
+      <AnchorPane fx:id="anchorPane" layoutX="22.0" layoutY="12.0" prefHeight="435.0" prefWidth="554.0" visible="false">
+         <children>
+            <ListView fx:id="playersListView" layoutX="14.0" layoutY="14.0" prefHeight="147.0" prefWidth="534.0" />
+            <Label fx:id="positionsLabel" layoutX="61.0" layoutY="179.0" prefHeight="62.0" prefWidth="254.0">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Button fx:id="rollDiceBtn" layoutX="402.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#rollDice" prefHeight="44.0" prefWidth="89.0" text="ROLL DICE" />
+            <Label fx:id="generatedNoLabel" layoutX="425.0" layoutY="248.0" prefHeight="30.0" prefWidth="43.0" textFill="#37ea1f">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="27.0" layoutY="254.0" prefHeight="18.0" prefWidth="90.0" text="Current position:" />
+            <Label fx:id="currentPositionLabel" layoutX="137.0" layoutY="248.0" prefHeight="30.0" prefWidth="43.0" />
+            <Label layoutX="27.0" layoutY="304.0" prefHeight="18.0" prefWidth="55.0" text="Currency:" />
+            <Label fx:id="currencyLabel" layoutX="89.0" layoutY="298.0" prefHeight="30.0" prefWidth="55.0">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="explanationLabel" layoutX="27.0" layoutY="374.0" prefHeight="44.0" prefWidth="493.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="logoutBtn" layoutX="432.0" layoutY="482.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="78.0" text="LOG OUT" visible="false" />
+   </children>
+</AnchorPane>
