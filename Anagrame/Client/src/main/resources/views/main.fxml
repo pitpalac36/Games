@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="472.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="anagrame.client.StartController">
+   <children>
+      <Button fx:id="startButton" disable="true" layoutX="177.0" layoutY="380.0" mnemonicParsing="false" onAction="#startNewGame" prefHeight="65.0" prefWidth="146.0" text="START GAME" />
+      <AnchorPane fx:id="gamePane" layoutX="16.0" layoutY="8.0" prefHeight="358.0" prefWidth="511.0" visible="false">
+         <children>
+            <ListView fx:id="playersList" layoutX="22.0" layoutY="14.0" prefHeight="142.0" prefWidth="255.0" />
+            <Label fx:id="label" layoutX="17.0" layoutY="195.0" prefHeight="39.0" prefWidth="106.0" text="FIRST WORD:" />
+            <Label fx:id="wordLabel" layoutX="123.0" layoutY="195.0" prefHeight="39.0" prefWidth="106.0" />
+            <TextField fx:id="guessField" layoutX="31.0" layoutY="258.0" prefHeight="32.0" prefWidth="170.0" promptText="my guess" />
+            <Button fx:id="sendResponseButton" layoutX="71.0" layoutY="312.0" mnemonicParsing="false" onMouseClicked="#sendResponse" text="SEND" />
+            <Label fx:id="redLabel" layoutX="264.0" layoutY="206.0" prefHeight="18.0" prefWidth="120.0" text="CORRECT WORD:" textFill="#e2091b" visible="false" />
+            <Label fx:id="correctWordLabel" layoutX="400.0" layoutY="205.0" prefHeight="18.0" prefWidth="106.0" textFill="#d71013" visible="false" />
+            <Label fx:id="pLabel" layoutX="312.0" layoutY="265.0" prefHeight="18.0" prefWidth="65.0" text="POINTS:" visible="false" />
+            <Label fx:id="pointsLabel" layoutX="400.0" layoutY="266.0" prefHeight="18.0" prefWidth="46.0" visible="false" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="logoutButton" layoutX="407.0" layoutY="397.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="87.0" text="LOGOUT" visible="false"  onAction="#logout"/>
+   </children>
+</AnchorPane>

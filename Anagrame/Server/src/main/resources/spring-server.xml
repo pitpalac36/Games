@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="userRepository" class="anagrame.repository.UserRepository"/>
+    <bean id="gameRepository" class="anagrame.repository.GameRepository"/>
+    <bean id="wordRepository" class="anagrame.repository.WordRepository"/>
+    <bean id="rankingRepository" class="anagrame.repository.RankingRepository"/>
+
+    <bean id="service" class="anagrame.server.ServiceImpl">
+        <constructor-arg ref="userRepository"/>
+        <constructor-arg ref="gameRepository"/>
+        <constructor-arg ref="wordRepository"/>
+        <constructor-arg ref="rankingRepository"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+
+        <property name="serviceName" value="Anagrame"/>
+        <property name="service" ref="service"/>
+        <property name="serviceInterface" value="anagrame.services.IServices"/>
+        <property name="servicePort" value="1099"/>
+    </bean>
+</beans>
