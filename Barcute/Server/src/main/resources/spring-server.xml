@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="userRepository" class="barcute.persistence.UserRepository"/>
+    <bean id="gameRepository" class="barcute.persistence.GameRepository"/>
+    <bean id="placeRepository" class="barcute.persistence.PlaceRepository"/>
+
+    <bean id="service" class="barcute.server.ServiceImpl">
+        <constructor-arg ref="userRepository"/>
+        <constructor-arg ref="gameRepository"/>
+        <constructor-arg ref="placeRepository"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+
+        <property name="serviceName" value="Barcute"/>
+        <property name="service" ref="service"/>
+        <property name="serviceInterface" value="barcute.services.IServices"/>
+        <property name="servicePort" value="1099"/>
+    </bean>
+</beans>
