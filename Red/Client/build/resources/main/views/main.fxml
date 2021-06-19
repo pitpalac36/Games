@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<AnchorPane prefHeight="666.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.client.MainController">
+    <Button fx:id="startBtn" layoutX="218.0" layoutY="585.0" mnemonicParsing="false" onMouseClicked="#start" prefHeight="54.0" prefWidth="101.0" text="START" />
+    <AnchorPane fx:id="anchorPane" layoutX="22.0" layoutY="12.0" prefHeight="565.0" prefWidth="554.0" visible="false">
+        <ListView fx:id="playersListView" layoutX="14.0" layoutY="14.0" prefHeight="147.0" prefWidth="534.0" />
+      <Button fx:id="card1Btn" layoutX="85.0" layoutY="192.0" mnemonicParsing="false" onAction="#pickCard" prefHeight="78.0" prefWidth="78.0" />
+      <Button fx:id="card2Btn" layoutX="236.0" layoutY="192.0" mnemonicParsing="false" onAction="#pickCard" prefHeight="78.0" prefWidth="78.0" />
+      <Button fx:id="card3Btn" layoutX="398.0" layoutY="192.0" mnemonicParsing="false" onAction="#pickCard" prefHeight="78.0" prefWidth="78.0" />
+      <FlowPane fx:id="wonCardsPane" layoutX="4.0" layoutY="294.0" prefHeight="222.0" prefWidth="547.0">
+      </FlowPane>
+    </AnchorPane>
+    <Button fx:id="logoutBtn" layoutX="433.0" layoutY="597.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="78.0" text="LOG OUT" />
+</AnchorPane>
