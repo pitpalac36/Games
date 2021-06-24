@@ -37,9 +37,8 @@ public class GameRepository implements IGameRepository {
             try {
                 tx = session.beginTransaction();
                 Game game = (Game) session.load(Game.class, g.getId());
-                /*
-                    SET PROPERTIES
-                 */
+                game.setCards(g.getCards());
+                game.setInProgress(g.isInProgress());
                 tx.commit();
             } catch (RuntimeException ex) {
                 if (tx != null) {

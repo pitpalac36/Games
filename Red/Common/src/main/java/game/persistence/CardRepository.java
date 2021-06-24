@@ -75,7 +75,7 @@ public class CardRepository implements ICardRepository {
             Transaction tx = null;
             try {
                 tx = session.beginTransaction();
-                String queryString = "from Card as c where c.game=? and c.username=?";
+                String queryString = "from Card as c where c.game=? and c.username=? and c.fromServer=true";
                 List<Card> cards = session.createQuery(queryString, Card.class)
                         .setParameter(0, game)
                         .setParameter(1, username)
